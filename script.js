@@ -1,4 +1,17 @@
-const numberOfFilms = prompt('Сколько фильмов вы уже смотрели?')
+let numberOfFilms
+
+
+function start() {
+    numberOfFilms = +prompt('Сколько фильмов вы уже смотрели?');
+    while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+        numberOfFilms = +prompt('Сколько фильмов вы уже смотрели?');
+    }
+
+}
+
+
+start();
+
 const personalMovieDB = {
     count: numberOfFilms,
     movies: {},
@@ -8,9 +21,9 @@ const personalMovieDB = {
 };
 
 const a = prompt('Один из просметренных фильмов', ''),
-      b = prompt('На сколько оцените это?', ''),
-      c = prompt('Один из последних просмотренных фильмов', ''),
-      d = prompt('На сколько оцените это?', '');
+    b = prompt('На сколько оцените это?', ''),
+    c = prompt('Один из последних просмотренных фильмов', ''),
+    d = prompt('На сколько оцените это?', '');
 
 
 personalMovieDB.movies[a] = b;
